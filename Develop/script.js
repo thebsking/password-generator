@@ -6,20 +6,17 @@ var characters = {
   numbers: "01234567890",
   special: "!@#$%&*()"
 };
-var userLength; 
+
 var userOptions = [];
 
 function generatePassword() {
 //user prompts
-function lengthPrompt() {
-  
-  userLength = prompt("Please chose a password length (between 8 & 128");
-  if (userLength < 8 || userLength > 128) {
+  var userLeng = prompt("Please chose a password length (between 8 & 128");
+  if (userLeng < 8 || userLeng > 128) {
     alert("Please choose a number between 8 & 128");
-    lengthPrompt();
+    generatePassword();
   } 
-};
-function characterPrompts() {
+
   //include lowercase
  var choice1 = confirm("Do you want to include lower case letters?");
  if(choice1){
@@ -45,20 +42,19 @@ function characterPrompts() {
     alert("You must include at least one type");
     characterPrompts();
   };
-} ;
+
 
 //loop through options array
 var chooseChar; 
 var results = [];
-for (var i = 0; i < userLength.length; i++) {
+for (var i = 0; i < userLeng.length; i++) {
   chooseChar = Math.floor(Math.random()*userOptions.length);
   results.push(userOptions.splice(chooseChar, 1));
 }
+var output = results.toString();
 
-lengthPrompt();
-characterPrompts();
-return results;
-}
+return output;
+};
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
