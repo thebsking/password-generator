@@ -47,15 +47,17 @@ function characterPrompts() {
   };
 } ;
 
-
-
-
-
-
 //loop through options array
+var chooseChar; 
+var results = [];
+for (var i = 0; i < userLength.length; i++) {
+  chooseChar = Math.floor(Math.random()*userOptions.length);
+  results.push(userOptions.splice(chooseChar, 1));
+}
 
 lengthPrompt();
 characterPrompts();
+return results;
 }
 // Write password to the #password input
 function writePassword() {
