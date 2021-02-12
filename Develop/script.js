@@ -22,7 +22,6 @@ function generatePassword() {
  var confirmLower = confirm("Do you want to include lower case letters?");
  if(confirmLower){
   selectedOptions.push(characters.lowerCase.split(''));
-  console.log(selectedOptions);
 };
 //include uppercase
  var confirmUpper = confirm("Do you want to include upper case letters?");
