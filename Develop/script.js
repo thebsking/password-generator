@@ -41,16 +41,20 @@ function generatePassword() {
 };
   if (!confirmLower && !confirmUpper && !confirmNumbers && !confirmSpecial) {
     alert("You must include at least one type");
-    characterPrompts();
+    generatePassword();
   };
 
 
 //loop through options array
 var results = [];
+var outerIndex;
+var innerIndex;
 for (var i = 0; i <= userLeng; i++) {
-  
+  outerIndex = Math.floor(Math.random()*selectedOptions.length);
+  innerIndex = Math.floor(Math.random()*selectedOptions[outerIndex].length);
+  results.push(selectedOptions[outerIndex].pop(innerIndex));
 }
-var output = results.toString();
+var output = results.join('');
 
 return output;
 };
