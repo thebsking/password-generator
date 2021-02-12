@@ -51,7 +51,7 @@ var innerIndex;
 for (var i = 0; i <= userLeng; i++) {
   outerIndex = Math.floor(Math.random()*selectedOptions.length);
   innerIndex = Math.floor(Math.random()*selectedOptions[outerIndex].length);
-  results.push(selectedOptions[outerIndex].pop(innerIndex));
+  results.push(selectedOptions[outerIndex].splice(innerIndex, 1));
 }
 var output = results.join('');
 
