@@ -6,7 +6,7 @@ When the user clicks on the "Generate Password" button they receive a series of 
 Once all of the prompts are answered, the randomly generated password is displayed on the screen for the user to copy. 
 
 ## Application URL
-;lakjdf 
+[Link to Deployed Application](https://thebsking.github.io/password-generator/)
 
 ## Screenshot
-![IMAGE TEXT](image URL)
+![screenshot of deployed application](./assets/preview.png)
