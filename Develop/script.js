@@ -7,9 +7,10 @@ var characters = {
   special: "!@#$%&*()"
 };
 
-var userOptions = [];
+var selectedOptions = [];
 
 function generatePassword() {
+  
 //user prompts
   var userLeng = prompt("Please chose a password length (between 8 & 128");
   if (userLeng < 8 || userLeng > 128) {
@@ -18,43 +19,42 @@ function generatePassword() {
   } 
 
   //include lowercase
- var choice1 = confirm("Do you want to include lower case letters?");
- if(choice1){
-  userOptions.push(characters.lowerCase);
-  console.log(choice1);
+ var confirmLower = confirm("Do you want to include lower case letters?");
+ if(confirmLower){
+  selectedOptions.push(characters.lowerCase.split(''));
+  console.log(selectedOptions);
 };
 //include uppercase
- var choice2 = confirm("Do you want to include upper case letters?");
- if(choice2) {
-  userOptions.push(characters.upperCase);
+ var confirmUpper = confirm("Do you want to include upper case letters?");
+ if(confirmUpper) {
+  selectedOptions.push(characters.upperCase.split(''));
 };
 //include numbers
- var choice3 = confirm("Do you want to include numbers?");
- if(choice3) {
-  userOptions.push(characters.numbers);
+ var confirmNumbers = confirm("Do you want to include numbers?");
+ if(confirmNumbers) {
+  selectedOptions.push(characters.numbers.split(''));
 ;}
 //include special characters
- var choice4 = confirm("do you want to include special characters?");
- if(choice4) {
-  userOptions.push(characters.special);
+ var confirmSpecial = confirm("do you want to include special characters?");
+ if(confirmSpecial) {
+  selectedOptions.push(characters.special.split(''));
 };
-  if (!choice1 && !choice2 && !choice3 && !choice4) {
+  if (!confirmLower && !confirmUpper && !confirmNumbers && !confirmSpecial) {
     alert("You must include at least one type");
     characterPrompts();
   };
 
 
 //loop through options array
-var chooseChar; 
 var results = [];
-for (var i = 0; i < userLeng.length; i++) {
-  chooseChar = Math.floor(Math.random()*userOptions.length);
-  results.push(userOptions.splice(chooseChar, 1));
+for (var i = 0; i <= userLeng; i++) {
+  
 }
 var output = results.toString();
 
 return output;
 };
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
