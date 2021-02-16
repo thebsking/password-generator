@@ -48,10 +48,10 @@ function generatePassword() {
 var results = [];
 var outerIndex;
 var innerIndex;
-for (var i = 0; i <= userLeng; i++) {
+for (var i = 1; i <= userLeng; i++) {
   outerIndex = Math.floor(Math.random()*selectedOptions.length);
   innerIndex = Math.floor(Math.random()*selectedOptions[outerIndex].length);
-  results.push(selectedOptions[outerIndex].splice(innerIndex, 1));
+  results.push(selectedOptions[outerIndex][innerIndex]);
 }
 var output = results.join('');
 
